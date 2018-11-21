@@ -1,3 +1,4 @@
+<style>
 * {
   transition: .2s;
 }
@@ -7,7 +8,7 @@
   top: -9px!important;
   left: -483px!important;
   height: 41px;
-  width: 1920px;
+  width: 100vw;
   z-index: -1;
   background: #353535;
   transform: opacity(0);
@@ -50,9 +51,10 @@ ul.toolbar.clearfix li {
 ul.toolbar {
   background-color: #ffffff;
   border-bottom: none;
-  padding: 9px 0px;
+  padding: 8px 0px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2px;
+  height: 44px;
+  margin-bottom: 15px;
 }
 
 .toolbar .dropdown {
@@ -614,4 +616,4 @@ a.icon_spy {
   #calls {
     display: none!important;
   }
-}
+}</style>
