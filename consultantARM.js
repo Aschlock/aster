@@ -1,13 +1,15 @@
 'use strict';
 
-window.addEventListener('load', function createElements() {
-	$('#reports .fw2-tabs .labels').append("<div title='Скрыть консультантов в паузе' class='eye'>");
-	$('#reports .fw2-tabs .labels').append("<div class='on_call'></div>");
-	$('#reports .fw2-tabs .labels').append("<div class='on_lane'></div>");
-})
+$(window).on('load', function createElements() {
+	$('#reports .fw2-tabs .labels').append("<div title='Скрыть консультантов в паузе' class='eye'>") //must be onload
+	$('#reports .fw2-tabs .labels').append("<div class='on_call'></div>"); //must be onload
+	$('#reports .fw2-tabs .labels').append("<div class='on_lane'></div>"); //must be onload
+
+
 
 var hidden = false;
-$('.eye').click(function() {
+
+$('.eye').on('click', function() {
 	$('.eye').toggleClass('eye-line');
 	if ( hidden == false ) {
 		$('#reports .tab:first-of-type .row .paused').parent().hide()
@@ -19,9 +21,11 @@ $('.eye').click(function() {
 		})
     return hidden = true;
 	} else {
-		$('#reports').off('ajaxComplete'); $('#reports .tab:first-of-type .row').show();
+		$('#reports').off('ajaxComplete');
+        $('#reports .tab:first-of-type .row').show();
 		return hidden = false;
 	}
+})
 })
 
 $(window).ajaxComplete(function() { 
