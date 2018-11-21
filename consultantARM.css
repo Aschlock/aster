@@ -1,0 +1,617 @@
+* {
+  transition: .2s;
+}
+
+.dropdown.menu:nth-of-type(1) {
+  display: block!important;
+  top: -9px!important;
+  left: -483px!important;
+  height: 41px;
+  width: 1920px;
+  z-index: -1;
+  background: #353535;
+  transform: opacity(0);
+  /* filter: opacity(0); */
+  opacity: 0;
+  transition: .5s cubic-bezier(0.86, -0.76, 1, 1);
+  transition-delay: .7s;
+  border: none;
+}
+
+.dropdown.menu a:nth-last-of-type(5):hover {
+  box-shadow: inset 0px -3px 0 #ff8d17;
+}
+
+.dropdown.menu a {
+  display: inline-block;
+  height: 17px;
+  width: auto;
+  vertical-align: middle;
+  color: white!important;
+  padding: 12px 25px;
+}
+
+.work {
+  width: 150px;
+  height: 35px;
+  border-radius: 15px;
+  background: grey;
+  position: absolute;
+  top: 500px;
+  right: 500px;
+  text-align: center;
+}
+
+ul.toolbar.clearfix li {
+  margin: 10px 0;
+  /* border-left: 1px solid black; */
+}
+
+ul.toolbar {
+  background-color: #ffffff;
+  border-bottom: none;
+  padding: 9px 0px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2px;
+}
+
+.toolbar .dropdown {
+  border: solid #f5f5f5 1px;
+  box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.15);
+}
+
+.toolbar.clearfix li span a {
+  text-decoration: none!important;
+}
+
+.onform,
+.dialout,
+.calling,
+.direct,
+.busy {
+  color: #1FB09F;
+}
+
+ul.toolbar>li+li {
+  border-left: 1px solid #eeeeee;
+}
+
+a.icon_ag_logout {
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_exit2-512.png) 2px 70% no-repeat;
+  padding: 10px 13px 9px 22px;
+  background-size: 25px;
+  width: 31px!important;
+  height: 35px;
+  /* line-height: 35px; */
+  filter: invert(30%);
+}
+
+a.icon_dial {
+  background: url(https://cdn4.iconfinder.com/data/icons/standard-free-icons/139/Call01-512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 22px;
+  line-height: 18px;
+  background-size: 20px;
+  filter: invert(30%);
+}
+
+.link-item a.icon_dial {
+  padding: 1px 0 1px 29px;
+}
+
+a.icon_record {
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_play-512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 22px;
+  line-height: 18px;
+  filter: invert(30%);
+  background-size: 17px;
+}
+
+span#state_str {
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_Message-512.png) 2px 70% no-repeat;
+  padding: 5px 0px 5px 29px;
+  line-height: 18px;
+  font-weight: bold;
+  background-size: 20px;
+  filter: invert(30%);
+}
+
+a.icon_hangup {
+  /* background-size: 20px; */
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_exit-512.png) 2px 70% no-repeat;
+  padding: 1px 0 3px 30px;
+  line-height: 18px;
+  background-size: 24px;
+  filter: invert(30%);
+}
+
+a.icon_close_form {
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_time-512.png) 2px 70% no-repeat;
+  padding: 5px 0px 2px 30px;
+  line-height: 18px;
+  background-size: 19px;
+  filter: invert(30%);
+}
+
+a.icon_pause {
+  background: url(https://cdn3.iconfinder.com/data/icons/eightyshades/512/25_Pause-512.png) 2px 70% no-repeat;
+  padding: 7px 0px 4px 29px;
+  line-height: 18px;
+  background-size: 19px;
+  filter: invert(30%);
+}
+
+a.icon_call_history {
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_paste-512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 29px;
+  line-height: 18px;
+  background-size: 18px;
+  filter: invert(30%);
+}
+
+a.icon_hold {
+  background: url(https://cdn2.iconfinder.com/data/icons/font-awesome/1792/microphone-slash-512.png) 2px 70% no-repeat;
+  padding: 4px 0px 3px 29px;
+  line-height: 18px;
+  background-size: 19px;
+  filter: invert(30%);
+}
+
+a.icon_unpause {
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_user-512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 31px;
+  line-height: 18px;
+  background-size: 20px;
+  filter: invert(30%);
+}
+
+.toolbar li a:hover {
+  filter: none;
+}
+
+#agent_actions span {
+  padding: 23px 10px 24px 8px;
+}
+
+#agent_actions span:hover {
+  box-shadow: inset 0px -3px 0 #1fb09f;
+}
+
+#agent_actions {
+  display: block;
+}
+
+#header {
+  padding: 0;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.toolbar.clearfix li span a {
+  text-decoration: none!important;
+}
+
+li#agent_actions span:hover .dropdown.menu {
+  transition: 0.2s;
+  top: 41px!important;
+  opacity: 1;
+}
+
+.toolbar .menu a:hover {
+  background: #484848;
+  box-shadow: inset 0 -3px 0 #1fb09f;
+}
+
+ul.toolbar {
+  background-color: #ffffff;
+  border-bottom: none;
+  padding: 8px 0px;
+  /* margin: 0; */
+  /* margin: 10px 0; */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  height: 44px;
+  margin-bottom: 15px!important;
+  /*Новое.*/
+}
+
+#middle {
+  width: 100%;
+  padding: 0 0 40px;
+  height: 1%;
+  z-index: 0;
+  /*Новое.*/
+  margin-top: 75px;
+}
+
+#agent_actions span>a {
+  padding: 24px 0px 24px 29px;
+  background-position: 2px 50%;
+}
+
+#wrapper {
+  background: whitesmoke;
+  display: grid;
+  grid-auto-rows: min-content;
+  overflow-x: hidden;
+  /*Новое.*/
+}
+
+
+/*::selection светлее.*/
+
+*::selection {
+  background: #4a4a4a;
+  color: white!important;
+}
+
+* {
+  transition: .2s
+}
+
+.fw2-tabs:first-of-type {
+  min-width: 380px;
+}
+
+.fw2-tabs .tab {
+  border: none;
+  border-width: 0 1px 1px;
+  padding: 0;
+}
+
+.fw2-tabs ul.labels {
+  height: 51px;
+  line-height: 25px;
+  list-style: none;
+  background: none;
+  border-bottom: 2px solid #00000014;
+  margin: 0 0 10px 0;
+}
+
+#wrapper {
+  margin: 0 auto;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  background: whitesmoke;
+}
+
+.fw2-tabs {
+  margin: 10px;
+  background: white;
+  padding: 0 20px 20px 20px;
+  box-shadow: 0 5px 10px 0px #00000021;
+}
+
+.fw2-tabs ul.labels>li.current {
+  color: none;
+  background: none;
+  padding: 14px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset 0 -2px 0 0px #1FB09F;
+}
+
+.fw2-tabs ul.labels>li {
+  font-weight: none;
+  float: left;
+  display: inline;
+  margin: none;
+  padding: 14px;
+  color: #666;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: none;
+  position: relative;
+  border-radius: none;
+}
+
+.fw2-tabs ul.labels>li:not(.current):hover {
+  color: none;
+  background: none;
+  border: none;
+  border-bottom: none;
+  box-shadow: inset 0 -2px 0 #1fb09f5c;
+  transition: .2s;
+}
+
+.vertical tbody tr th {
+  /* background: #7b7b7b; */
+  width: 180px;
+  text-align: left!important;
+  padding: 0 10px;
+}
+
+*::selection {
+  background: #4a4a4a;
+  color: white;
+}
+
+ul.toolbar li.link-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+tr {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.Grid table td {
+  border: none;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 4px;
+  height: 26px;
+  text-align: left;
+}
+
+.Grid table tr:hover {
+  background: #e4e4e4;
+  box-shadow: inset 4px 0 0 #1fb09f;
+}
+
+tr:nth-of-type(2n) {
+  background: #fbfbfb;
+}
+
+.Grid table td:first-of-type {
+  padding: 0 15px;
+}
+
+
+/*.Grid table tr.row.selected {
+    background: #e8e8e8;
+}*/
+
+#calls .current {
+  box-shadow: inset 0 -2px 0 0px #1fb09f;
+}
+
+#calls th {
+  background: #1fb09f;
+}
+
+#cc .fw2-tabs .current {
+  box-shadow: inset 0 -2px 0 #1fb09f;
+}
+
+#cc .fw2-tabs tr th {
+  background: #1fb09f;
+}
+
+.Grid table th {
+  border: 1px #EEE solid;
+  padding: 0 4px;
+  font-size: 90%;
+  height: 26px;
+  color: #FFF;
+  background-color: #1fb09f;
+  cursor: pointer;
+}
+
+#calls .Grid table tr:hover {
+  background: #e4e4e4;
+  box-shadow: inset 4px 0 0 #1fb09f;
+}
+
+.ui-dropdownchecklist-selector {
+  height: 18px;
+  border: 1px solid #c6c6c6;
+  background: #fff;
+  font-size: inherit;
+  line-height: 18px;
+  background: url(https://cdn3.iconfinder.com/data/icons/eightyshades/512/11_Search-512.png) #fff no-repeat 96% 49%;
+  padding: 1px 28px 1px 1px;
+  vertical-align: middle;
+  background-size: 13px;
+}
+
+a.icon_inc {
+  background: url(https://cdn1.iconfinder.com/data/icons/feather-2/24/cast-512.png) 4px 70% no-repeat;
+  padding: 1px 0 1px 22px;
+  line-height: 18px;
+  background-size: 18px;
+}
+
+.red {
+  background-color: #cc333340;
+  color: #b71c1cfc;
+  font-weight: normal;
+  box-shadow: inset 3px 0px 0 #ea2121;
+}
+
+.yellow {
+  background-color: #ffff3340;
+  font-weight: normal;
+  padding: 3px;
+  box-shadow: inset 3px 0 0 #eac821;
+  color: #927c10;
+}
+
+.green {
+  background-color: #00993340;
+  color: #2d6b1c;
+  font-weight: normal;
+  box-shadow: inset 3px 0 0 #58cc3b;
+}
+
+table.monitor>tbody>tr>td>div {
+  margin-bottom: 20px;
+}
+
+.filters input[type="text"],
+.filters input.hint {
+  border: 1px solid #c6c6c6;
+  height: 18px;
+  vertical-align: middle;
+  padding: 2px 5px;
+}
+
+tbody {
+  border: 1px solid #ebebeb;
+}
+
+#agents_queues .fw2-tabs .tab:first-of-type tr.row.selected+.toolbar {
+  display: block;
+  margin: -32px 0 0 13px;
+  position: absolute;
+}
+
+.Grid table tr.row.selected {
+  background: none;
+  box-shadow: inset 4px 0px 0px #1fb09f;
+}
+
+#calls .Grid table tr.row.selected {
+  background: none;
+  box-shadow: inset 4px 0px 0px #1fb09f;
+}
+
+#agents_queues .tab:first-of-type tr.row.selected>td {
+  padding-bottom: 45px;
+  padding-top: 6px;
+}
+
+.busy,
+.direct,
+a:link,
+a:visited,
+.dialout {
+  color: #1fb09f;
+}
+
+.calling {
+  color: #999;
+}
+
+div#report_container tr {
+  background: none;
+}
+
+a.icon_dial {
+  background: url(../img/agent_icons/Call01-512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 24px;
+  line-height: 18px;
+  background-size: 18px;
+}
+
+a.icon_take {
+  background: url(https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Update-512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 24px;
+  line-height: 18px;
+  background-size: 18px;
+}
+
+a.icon_whisper {
+  background: url(https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Message-2-512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 24px;
+  line-height: 18px;
+  background-size: 17px;
+}
+
+a.icon_spy {
+  background: url(https://image.ibb.co/cTH7Ep/22_512.png) 2px 70% no-repeat;
+  padding: 1px 0 1px 24px;
+  line-height: 18px;
+  background-size: 17px;
+}
+
+.toolbar li a:not(.disabled) {
+  filter: invert(.2);
+}
+
+.toolbar li a.disabled {
+  filter: opacity(.4);
+}
+
+.eye {
+  float: right;
+  position: relative;
+  margin: 15px 10px;
+  width: 20px;
+  height: 20px;
+  opacity: .2;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_view-512.png) no-repeat;
+  background-size: 20px;
+  background-position: 50% 50%;
+}
+
+.eye:hover {
+  opacity: .3;
+}
+
+.eye:active {
+  transform: scale(.8);
+  transition: 0s;
+}
+
+.eye-line::after {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: black;
+  z-index: 99999999999;
+  display: block;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 9px;
+  left: -1px;
+  animation: fadein .2s;
+}
+
+.on_call,
+.on_lane {
+  float: right;
+  margin: 12px 10px;
+  opacity: .5;
+}
+
+.on_call:hover,
+.on_lane:hover {
+  opacity: .7;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1600px) {
+  .dropdown.menu a {
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 1150px) {
+  #agent_actions span a.disabled:not(.icon_unpause):not(.icon_pause) {
+    display: none!important;
+  }
+  .dropdown.menu a {
+    display: block;
+    height: unset;
+    width: auto;
+    padding: 7px 25px;
+  }
+  .dropdown.menu:nth-of-type(1) {
+    display: block!important;
+    top: -342px!important;
+    left: -40px!important;
+    height: unset;
+    width: 100px;
+  }
+}
+
+@media (max-width: 1090px) {
+  #calls {
+    display: none!important;
+  }
+}
