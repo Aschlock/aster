@@ -541,6 +541,7 @@ a.icon_spy {
   background: url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_view-512.png) no-repeat;
   background-size: 20px;
   background-position: 50% 50%;
+  user-select: none;
 }
 
 .eye:hover {
