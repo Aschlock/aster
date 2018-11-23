@@ -7,7 +7,7 @@ $(window).on('load', function createElements() {
 
 
 
-var hidden = false;
+let hidden = false;
 
 $('.eye').on('click', function() {
 	$('.eye').toggleClass('eye-line');
@@ -109,11 +109,11 @@ $(window).on('load', function() {
 })
 
 //q for queue
-var qWas = 0, queueCounter = 0, showedNotifs = 0;
+let qWas = 0, queueCounter = 0, showedNotifs = 0;
 setInterval( function showingNotifs () { 
-	var inQueue = +document.getElementsByClassName('in_queue')[0].innerHTML;
+	let inQueue = +$('.in_queue').html();
 	if ( getStatus() && showedNotifs === 1 && inQueue >= qWas + 3 ) {
-		var notification = new Notification("Очередь растёт. Звонков в очереди: " + ( inQueue - document.getElementsByClassName('ringing').length ), {body: "Похоже, на линии требуется помощь.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
+		let notification = new Notification("Очередь растёт. Звонков в очереди: " + ( inQueue - $('.ringing').length ), {body: "Похоже, на линии требуется помощь.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
 		showedNotifs++;
 	}
 	if ( getStatus() && checkQueue() && inQueue < 6 && queueCounter > 15 && showedNotifs < 1 ) {
@@ -129,7 +129,7 @@ setInterval( function showingNotifs () {
 
 //Проверяем наличие очереди. Если нет, скидываем счётчик очереди.
 $('#call_stats').ajaxComplete( function dontHaveQueue() {
-	if ( +document.getElementsByClassName('in_queue')[0].innerHTML == 0 || !checkQueue() ) {
+	if ( +$('.in_queue').html() == 0 || !checkQueue() ) {
 		return [queueCounter = 0, showedNotifs = 0, qWas = 0]
 	}
 })
@@ -137,29 +137,26 @@ $('#call_stats').ajaxComplete( function dontHaveQueue() {
 
 //Показываем уведомление.
 function showNotification () {
-	var inQueue = +document.getElementsByClassName('in_queue')[0].innerHTML;
-	var notification = new Notification("Звонков в очереди: " + ( inQueue - document.getElementsByClassName('ringing').length ), {body: "Похоже, на линии требуется помощь.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
+	let inQueue = +$('.in_queue').html();
+	let notification = new Notification("Звонков в очереди: " + ( inQueue - $('.ringing').length ), {body: "Похоже, на линии требуется помощь.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
 }
 
 //В каком типе перерыва консультант.
 function getStatus() { 
-	var status = document.getElementsByClassName('info')[0].innerHTML;
+	let status = $('.info').html();
 	return ( (status == 'Альт. работа' || status == 'Сложный инцидент' || status == 'Почта') && $('[state="paused"').attr('style') === '' )
 }
 
 //Есть ли очередь.
 function checkQueue() {
-	return ( document.getElementsByClassName('ringing').length < +document.getElementsByClassName('in_queue')[0].innerHTML && +document.getElementsByClassName('in_queue')[0].innerHTML !== 0 )
+	return ( $('.ringing').length < +$('.in_queue').html() && +$('.in_queue').html() !== 0 )
 }
 
-
-document.getElementsByClassName('icon_unpause')[0].addEventListener('click', function() { document.getElementsByClassName('info')[0].innerHTML = 'Ожидание звонка';})
-
-var sentCount = 0;
+let sentCount = 0;
 $('#state_str').ajaxComplete( 
 	function hardIncident () {
 		if ( $('.info').html() === 'Сложный инцидент' && $('.timer').html() > '0:10:00' && sentCount < 1 && $('[state="paused"').attr('style') === '' ) {
-			var notification = new Notification("Сложный инцидент", {body: "Ты в сложном уже более 10 минут.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
+			let notification = new Notification("Сложный инцидент", {body: "Ты в сложном уже более 10 минут.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
 			return sentCount++
 		} else { 
 			if ( $('.info').html() !== 'Сложный инцидент' || $('[state="paused"').attr('style') === 'display: none;' ) { 
