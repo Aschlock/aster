@@ -1,9 +1,9 @@
 'use strict';
 
 $(window).on('load', function createElements() {
-	$('#reports .fw2-tabs .labels').append("<div title='Скрыть консультантов в паузе' class='eye'>") //must be onload
-	$('#reports .fw2-tabs .labels').append("<div class='on_call'></div>"); //must be onload
-	$('#reports .fw2-tabs .labels').append("<div class='on_lane'></div>"); //must be onload
+	$('#reports .fw2-tabs .labels').append("<div title='Скрыть консультантов в паузе' class='eye'>");
+	$('#reports .fw2-tabs .labels').append("<div class='on_call'></div>");
+	$('#reports .fw2-tabs .labels').append("<div class='on_lane'></div>");
 
 
 
@@ -104,7 +104,9 @@ $('[agent-action = hangup]').ajaxComplete(
 
 
 
-$(window).on('load', function() { Notification.requestPermission(); })
+$(window).on('load', function() { 
+	Notification.requestPermission(); 
+})
 
 //q for queue
 var qWas = 0, queueCounter = 0, showedNotifs = 0;
@@ -142,7 +144,7 @@ function showNotification () {
 //В каком типе перерыва консультант.
 function getStatus() { 
 	var status = document.getElementsByClassName('info')[0].innerHTML;
-	return ( status == 'Альт. работа' || status == 'Сложный инцидент' || status == 'Почта' && $('[state="paused"').attr('style') === '' )
+	return ( (status == 'Альт. работа' || status == 'Сложный инцидент' || status == 'Почта') && $('[state="paused"').attr('style') === '' )
 }
 
 //Есть ли очередь.
@@ -158,10 +160,10 @@ $('#state_str').ajaxComplete(
 	function hardIncident () {
 		if ( $('.info').html() === 'Сложный инцидент' && $('.timer').html() > '0:10:00' && sentCount < 1 && $('[state="paused"').attr('style') === '' ) {
 			var notification = new Notification("Сложный инцидент", {body: "Ты в сложном уже более 10 минут.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
-			sentCount++
+			return sentCount++
 		} else { 
 			if ( $('.info').html() !== 'Сложный инцидент' || $('[state="paused"').attr('style') === 'display: none;' ) { 
-			sentCount = 0;
+			return sentCount = 0;
 			}
 		}
 	}
