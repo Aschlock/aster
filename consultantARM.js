@@ -71,6 +71,13 @@ $('.width_50x50 input').each(
 	}
 )
 
+$('.width_50x50 input').each( function() {
+    if ( this.value !== '' ) {
+        let label = $("label[for='" + $(this).attr('id') + "']");
+        label.addClass('labelUp');
+        $(this).addClass('filledInput');
+    }
+})
 
 
 $('[agent-action = hangup]').ajaxComplete( 
@@ -97,13 +104,13 @@ $('[agent-action = hangup]').ajaxComplete(
 
 
 
-window.onload = Notification.requestPermission();
+$(window).on('load', function() { Notification.requestPermission(); })
 
 //q for queue
 var qWas = 0, queueCounter = 0, showedNotifs = 0;
 setInterval( function showingNotifs () { 
 	var inQueue = +document.getElementsByClassName('in_queue')[0].innerHTML;
-	if ( getStatus() && showedNotifs == 1 && inQueue >= qWas + 3 ) {
+	if ( getStatus() && showedNotifs === 1 && inQueue >= qWas + 3 ) {
 		var notification = new Notification("Очередь растёт. Звонков в очереди: " + ( inQueue - document.getElementsByClassName('ringing').length ), {body: "Похоже, на линии требуется помощь.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
 		showedNotifs++;
 	}
@@ -149,11 +156,11 @@ document.getElementsByClassName('icon_unpause')[0].addEventListener('click', fun
 var sentCount = 0;
 $('#state_str').ajaxComplete( 
 	function hardIncident () {
-		if ( $('.info').html() == 'Сложный инцидент' && $('.timer').html() > '0:10:00' && sentCount < 1 && $('[state="paused"').attr('style') === '' ) {
+		if ( $('.info').html() === 'Сложный инцидент' && $('.timer').html() > '0:10:00' && sentCount < 1 && $('[state="paused"').attr('style') === '' ) {
 			var notification = new Notification("Сложный инцидент", {body: "Ты в сложном уже более 10 минут.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
 			sentCount++
 		} else { 
-			if ( $('.info').html() != 'Сложный инцидент' || $('[state="paused"').attr('style') === 'display: none;' ) { 
+			if ( $('.info').html() !== 'Сложный инцидент' || $('[state="paused"').attr('style') === 'display: none;' ) { 
 			sentCount = 0;
 			}
 		}
