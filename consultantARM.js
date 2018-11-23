@@ -31,10 +31,10 @@ $('.eye').on('click', function() {
 $(window).ajaxComplete(function() { 
 	$('.fw2-tabs .row').each( function() {
 		this.onclick = function() {
-		if ( $(this)[0].cells[1].getAttribute('style') === 'opacity: .5;' ) {
+		if ( $(this)[0].cells[1].getAttribute('style') === 'opacity: .3;' ) {
 			$(this)[0].cells[1].removeAttribute('style');
 		} else {
-			$(this)[0].cells[1].setAttribute('style', 'opacity: .5;');
+			$(this)[0].cells[1].setAttribute('style', 'opacity: .3;');
 		}
 	}
 	})
@@ -153,7 +153,7 @@ $('#state_str').ajaxComplete(
 			var notification = new Notification("Сложный инцидент", {body: "Ты в сложном уже более 10 минут.", icon: "https://cdn1.savepice.ru/uploads/2018/8/23/e591704995f02414c9f875eac0148150-full.png"});
 			sentCount++
 		} else { 
-			if ( $('.info').html() != 'Сложный инцидент' || $('.paused').attr('style') == 'display: none;' ) { 
+			if ( $('.info').html() != 'Сложный инцидент' || $('[state="paused"').attr('style') === 'display: none;' ) { 
 			sentCount = 0;
 			}
 		}
