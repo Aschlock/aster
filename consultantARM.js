@@ -79,6 +79,14 @@ $('.width_50x50 input').each( function() {
     }
 })
 
+$('.width_50x50 input').each( function() {
+    if ( this.value !== '' ) {
+        let label = $("label[for='" + $(this).attr('id') + "']");
+        label.addClass('labelUp');
+        $(this).addClass('filledInput');
+    }
+})
+
 
 $('[agent-action = hangup]').ajaxComplete( 
 	function toggleHold() {
