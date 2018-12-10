@@ -53,6 +53,9 @@ $(window).ajaxComplete(
 	}
 )
 
+
+//preparation for login page.
+/*
 $('.width_50x50 input').each(
 	function() {
 		this.onfocus = function() {
@@ -86,7 +89,7 @@ $('.width_50x50 input').each( function() {
         $(this).addClass('filledInput');
     }
 })
-
+*/
 
 $('[agent-action = hangup]').ajaxComplete( 
 	function toggleHold() {
