@@ -571,6 +571,7 @@ a.icon_spy {
   float: right;
   margin: 12px 10px;
   opacity: .5;
+  cursor: default;
 }
 
 .on_call:hover,
